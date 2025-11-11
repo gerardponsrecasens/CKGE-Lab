@@ -101,6 +101,8 @@ The dashboard displays:
 
 To showcase the different functionalities of the demo, we provide a [Notebook](https://colab.research.google.com/drive/1QbAyRzh_TF6tSlOZRvv3g41tMK4Z9g3-?usp=sharing) with an accompanying walkthrough video.
 
+[![Watch the video](assets/Figure3.png)](https://youtu.be/KthaTnAQDMA)
+
 
 ---
 ## 📜 License
