@@ -30,8 +30,13 @@ This repository provides a **model-agnostic framework** for performing **Continu
 └── README.md
 ```
 
-## 📦 Requirements
+## 📦 Usage
 
+To use the implemented functionalities, you can install them directly from GitHub:
+
+```python
+pip install git+https://github.com/gerardponsrecasens/CKGE-Lab
+```
 
 Requirements:
 
