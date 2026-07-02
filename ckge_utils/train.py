@@ -235,13 +235,13 @@ def train_CKGE(embedding_model,dataset_name,number_snapshots,embedding_dimension
 
 
 
-        order = ["mrr", "hits@1", "hits@3", "hits@10", "cf_mrr", "new_mrr"]
+        order = ["mrr", "hits@1", "hits@3", "hits@10", "acf_mrr", "new_mrr"]
         rename_map = {
             "mrr": "MRR",
             "hits@1": "Hits@1",
             "hits@3": "Hits@3",
             "hits@10": "Hits@10",
-            "cf_mrr": "Ω_old",
+            "acf_mrr": "ACF",
             "new_mrr": "Ω_new"
         }
         n_test = len(total_results)
@@ -291,9 +291,9 @@ def train_CKGE(embedding_model,dataset_name,number_snapshots,embedding_dimension
     
     
     metrics = pd.DataFrame({k: [v] for k, v in metrics.items()}).round(3)
-    cols_to_keep = ['cf_mrr', 'new_mrr','mrr', 'hits@1', 'hits@3', 'hits@10']
+    cols_to_keep = ['acf_mrr', 'new_mrr','mrr', 'hits@1', 'hits@3', 'hits@10']
     metrics = metrics[cols_to_keep]
-    metrics.rename(columns={'cf_mrr': 'Ω_old', 'new_mrr': 'Ω_new'}, inplace=True)
+    metrics.rename(columns={'cf_mrr': 'ACF', 'new_mrr': 'Ω_new'}, inplace=True)
 
 
     

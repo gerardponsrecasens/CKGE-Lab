@@ -198,26 +198,28 @@ def get_metrics(number_snapshots, test_list, total_results):
     for i in range(number_snapshots):
         total_testing += test_list[i].mapped_triples.shape[0]
 
+    last_test = test_list[number_snapshots-1].mapped_triples.shape[0]
+    catastrophic_testing = total_testing-last_test #we only evaluate cf in the N-1 snapshots
     # Forgetting:
     cf_h3 = 0
     cf_mmr = 0
+    acf_h3 = 0
+    acf_mmr = 0
     for i in range(number_snapshots-1):
     
         initial = total_results[i][i]['tail']['realistic']['hits_at_3']
         final = total_results[number_snapshots-1][i]['tail']['realistic']['hits_at_3']
         if initial > 0:
-            cf_h3 += final/initial*(test_list[i].mapped_triples.shape[0]/total_testing)
-        else:
-            cf_h3 +=0
+            cf_h3 += final/initial*(test_list[i].mapped_triples.shape[0]/catastrophic_testing)
+            acf_h3 += (final-initial)*test_list[i].mapped_triples.shape[0]/(initial*(number_snapshots-1-i)*catastrophic_testing)
 
         
 
         initial = total_results[i][i]['tail']['realistic']['inverse_harmonic_mean_rank']
         final = total_results[number_snapshots-1][i]['tail']['realistic']['inverse_harmonic_mean_rank']
         if initial >0:
-            cf_mmr += final/initial*(test_list[i].mapped_triples.shape[0]/total_testing)
-        else:
-            cf_mrr +=0
+            cf_mmr += final/initial*(test_list[i].mapped_triples.shape[0]/catastrophic_testing)
+            acf_mmr += (final-initial)*test_list[i].mapped_triples.shape[0]/(initial*(number_snapshots-1-i)*catastrophic_testing)
 
     # Knowledge Aquisition
     new_h3 = 0
@@ -237,7 +239,7 @@ def get_metrics(number_snapshots, test_list, total_results):
         h3 += total_results[number_snapshots-1][i]['tail']['realistic']['hits_at_3']*(test_list[i].mapped_triples.shape[0]/total_testing)
         h10 += total_results[number_snapshots-1][i]['tail']['realistic']['hits_at_10']*(test_list[i].mapped_triples.shape[0]/total_testing)
 
-    metrics = {'cf_mrr':cf_mmr,'cf_h3':cf_h3, 'new_mrr':new_mrr, 'new_cf':cf_h3, 'mrr':mrr, 'hits@1':h1, 'hits@3':h3, 'hits@10':h10}
+    metrics = {'cf_mrr':cf_mmr,'cf_h3':cf_h3,'acf_mrr':acf_mmr,'acf_h3':acf_h3, 'new_mrr':new_mrr, 'new_cf':cf_h3, 'mrr':mrr, 'hits@1':h1, 'hits@3':h3, 'hits@10':h10}
 
 
     return metrics
