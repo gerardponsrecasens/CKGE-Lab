@@ -49,17 +49,12 @@ Requirements:
 ---
 ## 🧩 Supported Models
 
-Currenlty, the following models are supprted:
+Currenlty, the **following models** are supported:
 
-| Model Name | Model Name | Model Name | Model Name |
-|------------|------------|------------|------------|
-| TransE     | TransH     | RotatE     | TransR     |
-| DistMult   | HolE       | ProjE      | ComplEx    |
-| RESCAL     | TransF     | TuckER     | ConvE      |
-| SimplE     | BoxE       | TransD     | TorusE     |
-| PairRE     | CP         | MuRE       | QuatE      |
-| CrossE     | DistMA     | ConvKB     | KG2E       |
-| ERMLP      |            |            |            |
+
+
+TransE, TransH, RotatE,TransR, DistMult, HolE, ProjE,ComplEx, RESCAL, TransF, TuckER, ConvE, SimplE, BoxE,TransD, TorusE, PairRE, CP, MuRE, QuatE, CrossE, DistMA,ConvKB, KG2E, ERMLP
+
 ---
 
 ## 🚀 Quick Start Example
@@ -99,7 +94,8 @@ The dashboard displays:
 
 ## 🖥️ Notebook Walkthrough
 
-To showcase the different functionalities of the demo, we provide a [Notebook](https://colab.research.google.com/drive/1QbAyRzh_TF6tSlOZRvv3g41tMK4Z9g3-?usp=sharing) with an accompanying walkthrough video.
+To showcase the different functionalities of the demo, we provide a [Notebook](https://colab.research.google.com/drive/1DWFUe9dXr5eCaQrYYwL8vDP1sJvufi-1?usp=sharing) with an accompanying walkthrough video:
+
 
 [![Watch the video](assets/Figure3.png)](https://youtu.be/KthaTnAQDMA)
 
