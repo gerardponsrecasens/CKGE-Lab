@@ -293,7 +293,7 @@ def train_CKGE(embedding_model,dataset_name,number_snapshots,embedding_dimension
     metrics = pd.DataFrame({k: [v] for k, v in metrics.items()}).round(3)
     cols_to_keep = ['acf_mrr', 'new_mrr','mrr', 'hits@1', 'hits@3', 'hits@10']
     metrics = metrics[cols_to_keep]
-    metrics.rename(columns={'cf_mrr': 'ACF', 'new_mrr': 'Ω_new'}, inplace=True)
+    metrics.rename(columns={'acf_mrr': 'ACF', 'new_mrr': 'Ω_new'}, inplace=True)
 
 
     
