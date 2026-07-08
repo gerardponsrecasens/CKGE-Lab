@@ -20,6 +20,7 @@ This repository provides a **model-agnostic framework** for performing **Continu
 
 > :warning: **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below:
 
+
 $$
 \Omega_{\mathrm{new}}
 =
@@ -29,6 +30,15 @@ $$
 \frac{|\mathcal{T}_i|}
 {\sum_{j=1}^{n} |\mathcal{T}_j|}
 $$
+
+\[
+\Omega_{\mathrm{new}}
+=
+\sum_{i=1}^{n}
+\alpha_i^i
+\frac{|\mathcal{T}_i|}
+{\sum_{j=1}^{n} |\mathcal{T}_j|}
+\]
 
 > :warning: **Important:** For coherence with recent works, $\Omega_{\mathrm{old}}$ is now reported as $\mathrm{ACF}$ and is computed as follows:
 
