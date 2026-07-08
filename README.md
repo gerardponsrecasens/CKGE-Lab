@@ -19,6 +19,7 @@ This repository provides a **model-agnostic framework** for performing **Continu
 
 
 > :warning: **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below:
+
 $$
 \Omega_{\mathrm{new}}
 =
