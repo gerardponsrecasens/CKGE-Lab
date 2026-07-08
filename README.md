@@ -14,20 +14,22 @@ This repository provides a **model-agnostic framework** for performing **Continu
 | **Model-Agnostic** | Works with *any unimodal KGE model* in PyKEEN (e.g., TransE, DistMult, ComplEx, RotatE, etc.). |
 | **Embedding & Model Expansion** | Automatically expands embedding matrices when new KG elements appear. |
 | **Informed Initialization** | Supports a schema-based initialization strategy to speed convergence and improve evaluation performance. |
-| **Extended Evaluation** | Reports both standard link prediction metrics and **CKGE-specific metrics.** :exclamation:|
+| **Extended Evaluation** | Reports both standard link prediction metrics and **CKGE-specific metrics.** :warning:|
 | **Interactive Dashboard** | Visualize performance changes across snapshots, including knowledge acquisition and forgetting. |
 
 
-> **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below:
+> :warning: **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below:
 $$
-\Omega_{\mathrm{new}} =
+\Omega_{\mathrm{new}}
+=
 \sum_{i=1}^{n}
 \alpha_i^i
+\cdot
 \frac{|\mathcal{T}_i|}
 {\sum_{j=1}^{n} |\mathcal{T}_j|}
 $$
 
-> **Important:** For coherence with recent works, $\Omega_{\mathrm{old}}$ is now reported as $\mathrm{ACF}$ and is computed as follows:
+> :warning: **Important:** For coherence with recent works, $\Omega_{\mathrm{old}}$ is now reported as $\mathrm{ACF}$ and is computed as follows:
 
 $$
 \mathrm{ACF} =
