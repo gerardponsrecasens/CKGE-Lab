@@ -18,8 +18,19 @@ This repository provides a **model-agnostic framework** for performing **Continu
 | **Interactive Dashboard** | Visualize performance changes across snapshots, including knowledge acquisition and forgetting. |
 
 
-> :warning: **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below:
+> :warning: **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below.
 
+
+> :warning: **Important:** For coherence with recent works, $\Omega_{\mathrm{old}}$ is now reported as $\mathrm{ACF}$ and is computed as follows.
+
+$$
+\mathrm{ACF} =
+\sum_{i=0}^{n-1}
+\frac{\alpha_n^i - \alpha_i^i}
+     {(n-i)\alpha_i^i}
+\frac{|\mathcal{T}_i|}
+     {\sum_{j=0}^{n-1} |\mathcal{T}_j|}
+$$
 
 $$
 \Omega_{\mathrm{new}}
@@ -29,26 +40,6 @@ $$
 \cdot
 \frac{|\mathcal{T}_i|}
 {\sum_{j=1}^{n} |\mathcal{T}_j|}
-$$
-
-\[
-\Omega_{\mathrm{new}}
-=
-\sum_{i=1}^{n}
-\alpha_i^i
-\frac{|\mathcal{T}_i|}
-{\sum_{j=1}^{n} |\mathcal{T}_j|}
-\]
-
-> :warning: **Important:** For coherence with recent works, $\Omega_{\mathrm{old}}$ is now reported as $\mathrm{ACF}$ and is computed as follows:
-
-$$
-\mathrm{ACF} =
-\sum_{i=0}^{n-1}
-\frac{\alpha_n^i - \alpha_i^i}
-     {(n-i)\alpha_i^i}
-\frac{|\mathcal{T}_i|}
-     {\sum_{j=0}^{n-1} |\mathcal{T}_j|}
 $$
 
 ## 📁 Repository Structure
