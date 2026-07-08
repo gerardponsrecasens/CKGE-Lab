@@ -14,27 +14,28 @@ This repository provides a **model-agnostic framework** for performing **Continu
 | **Model-Agnostic** | Works with *any unimodal KGE model* in PyKEEN (e.g., TransE, DistMult, ComplEx, RotatE, etc.). |
 | **Embedding & Model Expansion** | Automatically expands embedding matrices when new KG elements appear. |
 | **Informed Initialization** | Supports a schema-based initialization strategy to speed convergence and improve evaluation performance. |
-| **Extended Evaluation** | Reports both standard link prediction metrics and <span style="color:red">CKGE-specific metrics</span>.  |
+| **Extended Evaluation** | Reports both standard link prediction metrics and **CKGE-specific metrics.** :exclamation:|
 | **Interactive Dashboard** | Visualize performance changes across snapshots, including knowledge acquisition and forgetting. |
 
 
-<span style="color:red">The CKGE-specific metrics reported in the demo's paper have changed since its publication. Due to some typos</span> $\Omega_{new}$ <span style="color:red">has been adapted to the metric reported below:</span> 
+> **Important:** The CKGE-specific metrics reported in the demo paper have changed since its publication. Due to some typos, $\Omega_{\mathrm{new}}$ has been adapted to the metric reported below:
 $$
-\Omega_{\text{new}} =
+\Omega_{\mathrm{new}} =
 \sum_{i=1}^{n}
 \alpha_i^i
 \frac{|\mathcal{T}_i|}
 {\sum_{j=1}^{n} |\mathcal{T}_j|}
 $$
 
-<span style="color:red">For coherence with recent works, </span> $\Omega_{old}$ <span style="color:red">is now reported as </span> $ACF$ <span style="color:red">, and is computed as reported below:</span> 
+> **Important:** For coherence with recent works, $\Omega_{\mathrm{old}}$ is now reported as $\mathrm{ACF}$ and is computed as follows:
 
 $$
-\text{ACF} =
+\mathrm{ACF} =
 \sum_{i=0}^{n-1}
-\frac{(\alpha_n^i - \alpha_i^i)}{(n-i)\alpha_i^i}
+\frac{\alpha_n^i - \alpha_i^i}
+     {(n-i)\alpha_i^i}
 \frac{|\mathcal{T}_i|}
-{\sum_{j=0}^{n-1} |\mathcal{T}_j|}
+     {\sum_{j=0}^{n-1} |\mathcal{T}_j|}
 $$
 
 ## 📁 Repository Structure
