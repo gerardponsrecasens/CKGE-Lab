@@ -33,7 +33,6 @@ $$
 $$
 
 $$
-\Omega_{\mathrm{new}}
 =
 \sum_{i=1}^{n}
 \alpha_i^i
